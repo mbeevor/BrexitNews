@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Size for each list item -->
+    <dimen name="list_item_height">88dp</dimen>
+    <dimen name="list_item_padding">12dp</dimen>
+    <dimen name="list_item_margin">16dp</dimen>
+
+    <!-- Padding for text -->
+    <dimen name="text_padding">5dp</dimen>
+    <dimen name="text_margin">5dp</dimen>
+
+    <!-- list item call-to-action icon -->
+    <dimen name="icon_size">36dp</dimen>
+
+</resources>
