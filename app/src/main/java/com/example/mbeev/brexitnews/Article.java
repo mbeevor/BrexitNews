@@ -10,7 +10,7 @@ public class Article {
     private String webTitle;
     private String webUrl;
 
-    public Article(String articleWebTitle, String articleSectionName, String articleWebUrl) {
+    public Article(String articleSectionName, String articleWebTitle, String articleWebUrl) {
         webTitle = articleWebTitle;
         sectionName = articleSectionName;
         webUrl = articleWebUrl;

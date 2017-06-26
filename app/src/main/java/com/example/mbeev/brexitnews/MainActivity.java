@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -24,16 +25,23 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     private ProgressBar progressBar;
     private ListView newsListView;
     private NewsAdapter adapter;
-    private static final String API_STRING = "https://content.guardianapis.com/search?q=brexit&api-key=ecd2f5f3-61b9-4272-956d-ad37ea7e2359";
+    private static final String API_STRING = "http://content.guardianapis.com/search?q=brexit&page-size=50&api-key=ecd2f5f3-61b9-4272-956d-ad37ea7e2359";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set Toolbar to replace the ActionBar.
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         emptyStateTextView = (TextView) findViewById(R.id.empty_view);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         newsListView = (ListView) findViewById(R.id.list);
+
+        // set view to empty text view for no results found
+        newsListView.setEmptyView(emptyStateTextView);
 
         // create a new ArrayAdapter of articles
         adapter = new NewsAdapter(this, new ArrayList<Article>());
