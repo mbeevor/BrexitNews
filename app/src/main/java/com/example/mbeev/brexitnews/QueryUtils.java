@@ -134,22 +134,19 @@ public class QueryUtils {
         // Parse the response from the URL; throw exception if there is a problem and report to logs
         try {
             JSONObject jsonObject = new JSONObject(articleJSON);
-            // extract 'results' from JSONArray
-            JSONArray articleArray = jsonObject.getJSONArray("results");
+
+            JSONObject response = jsonObject.getJSONObject("response");
+            JSONArray results = response.getJSONArray("results");
+
             // Loop through each item in the items array
-            for (int i = 0; i < articleArray.length(); i++) {
-                JSONObject currentArticle = articleArray.getJSONObject(i);
+            for (int i = 0; i < results.length(); i++) {
+                JSONObject currentArticle = results.getJSONObject(i);
 
-                // TODO: fix based on using Array only, and not an object
+                String sectionName = currentArticle.getString("sectionName");
+                String webTitle = currentArticle.getString("webTitle");
+                String webUrl = currentArticle.getString("webUrl");
 
-                // get section name for each item in array list
-                JSONObject results = currentArticle.getJSONObject("results");
-
-                String sectionName = results.getString("sectionName");
-                String webTitle = results.getString("webTitle");
-                String webUrl = results.getString("webUrl");
-
-                // create new book
+                // create new article
                 Article article = new Article(sectionName, webTitle, webUrl);
                 articles.add(article);
             }
@@ -158,10 +155,9 @@ public class QueryUtils {
             Log.e("QueryUtils", "Problem parsing the News API results.", e);
         }
 
-        // return the list of books
+        // return the list of articles
         return articles;
     }
-
 }
 
 
