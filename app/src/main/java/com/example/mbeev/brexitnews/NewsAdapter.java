@@ -34,18 +34,9 @@ public class NewsAdapter extends ArrayAdapter<Article> {
 
         Article article = getItem(position);
 
-        // get date, convert date to readable format and assign to ID
+        // get date and assign to ID
         TextView webPublicationDate = (TextView) listItemView.findViewById(R.id.textview_publication_date);
-        SimpleDateFormat inputDate = new SimpleDateFormat("yyyy-MM-dd'T'kk:mm:ss'Z'");
-        Date date = null;
-        try {
-            date = inputDate.parse(article.getWebPublicationDate());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        SimpleDateFormat outputDate = new SimpleDateFormat("dd MMMM yyyy");
-        String finalDate = outputDate.format(date);
-        webPublicationDate.setText(finalDate);
+        webPublicationDate.setText(getFormartedDate(article.getWebPublicationDate()));
 
         // get web title and assign to ID
         TextView webTitle = listItemView.findViewById(R.id.textview_title);
@@ -60,6 +51,21 @@ public class NewsAdapter extends ArrayAdapter<Article> {
         trailTtext.setText(article.getTrailText());
 
         return listItemView;
+    }
+
+    // method to convert date to readable format
+    public String getFormartedDate(String publicationDate) {
+
+    SimpleDateFormat inputDate = new SimpleDateFormat("yyyy-MM-dd'T'kk:mm:ss'Z'");
+    Date date = null;
+        try {
+        date = inputDate.parse(publicationDate);
+    } catch (ParseException e) {
+        e.printStackTrace();
+    }
+    SimpleDateFormat outputDate = new SimpleDateFormat("dd MMMM yyyy");
+    String finalDate = outputDate.format(date);
+    return finalDate;
     }
 
 }
