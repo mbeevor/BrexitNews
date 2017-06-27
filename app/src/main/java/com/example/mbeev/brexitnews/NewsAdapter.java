@@ -41,7 +41,7 @@ public class NewsAdapter extends ArrayAdapter<Article> {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        SimpleDateFormat outputDate = new SimpleDateFormat("dd MMMM, yyyy");
+        SimpleDateFormat outputDate = new SimpleDateFormat("dd MMMM yyyy");
         String finalDate = outputDate.format(date);
         webPublicationDate.setText(finalDate);
 
