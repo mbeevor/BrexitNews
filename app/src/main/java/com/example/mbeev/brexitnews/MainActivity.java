@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     private ProgressBar progressBar;
     private ListView newsListView;
     private NewsAdapter adapter;
-    private static final String API_STRING = "http://content.guardianapis.com/search?q=brexit&page-size=50&api-key=ecd2f5f3-61b9-4272-956d-ad37ea7e2359";
+    private static final String API_STRING = "https://content.guardianapis.com/search?q=brexit&page-size=50&show-fields=all&api-key=ecd2f5f3-61b9-4272-956d-ad37ea7e2359";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

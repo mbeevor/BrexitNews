@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by mbeev on 25/06/2017.
@@ -19,6 +22,7 @@ public class NewsAdapter extends ArrayAdapter<Article> {
         super(context, 0, news);
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View listItemView = convertView;
@@ -28,12 +32,32 @@ public class NewsAdapter extends ArrayAdapter<Article> {
 
         Article article = getItem(position);
 
+        // get date, convert date to readable format and assign to ID
+        TextView webPublicationDate = (TextView) listItemView.findViewById(R.id.publication_date);
+        SimpleDateFormat inputDate = new SimpleDateFormat("yyyy-MM-dd'T'kk:mm:ss'Z'");
+        Date date = null;
+        try {
+            date = inputDate.parse(article.getWebPublicationDate());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        SimpleDateFormat outputDate = new SimpleDateFormat("dd MMMM, yyyy");
+        String finalDate = outputDate.format(date);
+        webPublicationDate.setText(finalDate);
+
+        // get web title and assign to ID
         TextView webTitle = listItemView.findViewById(R.id.web_title);
         webTitle.setText(article.getWebTitle());
 
+        // get section name and assign to ID
         TextView sectionName = listItemView.findViewById(R.id.section_name);
         sectionName.setText(article.getSectionName());
 
+        // get trailText and assign to ID
+        TextView trailTtext = listItemView.findViewById(R.id.trail_text);
+        trailTtext.setText(article.getTrailText());
+
         return listItemView;
     }
+
 }

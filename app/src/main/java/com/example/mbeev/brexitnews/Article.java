@@ -6,15 +6,21 @@ package com.example.mbeev.brexitnews;
 
 public class Article {
 
+    private String webPublicationDate;
     private String sectionName;
     private String webTitle;
     private String webUrl;
+    private String trailText;
 
-    public Article(String articleSectionName, String articleWebTitle, String articleWebUrl) {
+    public Article(String publicationDate, String articleSectionName, String articleWebTitle, String articleTrailText, String articleWebUrl) {
+        webPublicationDate = publicationDate;
         webTitle = articleWebTitle;
         sectionName = articleSectionName;
+        trailText = articleTrailText;
         webUrl = articleWebUrl;
     }
+
+    public String getWebPublicationDate() { return webPublicationDate; }
 
     public String getWebTitle() {
         return webTitle;
@@ -23,6 +29,8 @@ public class Article {
     public String getSectionName() {
         return sectionName;
     }
+
+    public String getTrailText() { return trailText; }
 
     public String getWebUrl() {
         return webUrl;

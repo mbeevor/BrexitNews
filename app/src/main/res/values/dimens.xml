@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Size for each list item -->
-    <dimen name="list_item_height">115dp</dimen>
+    <dimen name="list_item_height">200dp</dimen>
     <dimen name="list_item_padding">12dp</dimen>
     <dimen name="list_item_margin">16dp</dimen>
 

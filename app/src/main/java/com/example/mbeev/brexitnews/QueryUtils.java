@@ -138,16 +138,23 @@ public class QueryUtils {
             JSONObject response = jsonObject.getJSONObject("response");
             JSONArray results = response.getJSONArray("results");
 
-            // Loop through each item in the items array
+            // Loop through each item in the results array
             for (int i = 0; i < results.length(); i++) {
                 JSONObject currentArticle = results.getJSONObject(i);
 
+                // get returns from 'results' array
+                String publicationDate = currentArticle.getString("webPublicationDate");
                 String sectionName = currentArticle.getString("sectionName");
                 String webTitle = currentArticle.getString("webTitle");
                 String webUrl = currentArticle.getString("webUrl");
 
+                // find 'fields' object
+                JSONObject fields = currentArticle.getJSONObject("fields");
+                // get return for 'trailText'
+                String trailText = fields.getString("trailText");
+
                 // create new article
-                Article article = new Article(sectionName, webTitle, webUrl);
+                Article article = new Article(publicationDate, sectionName, webTitle, trailText, webUrl);
                 articles.add(article);
             }
 
