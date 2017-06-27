@@ -39,7 +39,7 @@ public class NewsAdapter extends ArrayAdapter<Article> {
         webPublicationDate.setText(getFormartedDate(article.getWebPublicationDate()));
 
         // get web title and assign to ID
-        TextView webTitle = listItemView.findViewById(R.id.textview_title);
+        TextView webTitle = listItemView.findViewById(R.id.text_view_title);
         webTitle.setText(article.getWebTitle());
 
         // get section name and assign to ID
