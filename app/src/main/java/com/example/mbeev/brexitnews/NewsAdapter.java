@@ -19,13 +19,15 @@ import java.util.Date;
 public class NewsAdapter extends ArrayAdapter<Article> {
 
     public NewsAdapter(Context context, ArrayList<Article> news) {
+
         super(context, 0, news);
     }
 
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         View listItemView = convertView;
+
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
@@ -33,7 +35,7 @@ public class NewsAdapter extends ArrayAdapter<Article> {
         Article article = getItem(position);
 
         // get date, convert date to readable format and assign to ID
-        TextView webPublicationDate = (TextView) listItemView.findViewById(R.id.publication_date);
+        TextView webPublicationDate = (TextView) listItemView.findViewById(R.id.textview_publication_date);
         SimpleDateFormat inputDate = new SimpleDateFormat("yyyy-MM-dd'T'kk:mm:ss'Z'");
         Date date = null;
         try {
@@ -46,15 +48,15 @@ public class NewsAdapter extends ArrayAdapter<Article> {
         webPublicationDate.setText(finalDate);
 
         // get web title and assign to ID
-        TextView webTitle = listItemView.findViewById(R.id.web_title);
+        TextView webTitle = listItemView.findViewById(R.id.textview_title);
         webTitle.setText(article.getWebTitle());
 
         // get section name and assign to ID
-        TextView sectionName = listItemView.findViewById(R.id.section_name);
+        TextView sectionName = listItemView.findViewById(R.id.textview_section_name);
         sectionName.setText(article.getSectionName());
 
         // get trailText and assign to ID
-        TextView trailTtext = listItemView.findViewById(R.id.trail_text);
+        TextView trailTtext = listItemView.findViewById(R.id.textview_trail_text);
         trailTtext.setText(article.getTrailText());
 
         return listItemView;

@@ -1,9 +1,11 @@
 <resources>
+
     <string name="app_name">Everything Brexit</string>
 
-    // Text for empty view and when no network connection
+    // Text for empty view
     <string name="empty_view">No articles found!</string>
-    <string name="no_network">Couldn\'t connect to server - check your data connection and try again.</string>
 
+    // Text for no network connection
+    <string name="no_network">Couldn\'t connect to server - check your data connection and try again.</string>
 
 </resources>

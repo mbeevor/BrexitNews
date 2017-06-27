@@ -1,6 +1,5 @@
 package com.example.mbeev.brexitnews;
 
-import android.app.DownloadManager;
 import android.content.AsyncTaskLoader;
 import android.content.Context;
 

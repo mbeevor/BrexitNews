@@ -10,13 +10,15 @@
 
     <!-- style for layout when no results found -->
     <style name="emptyTextView">
-        <item name="android:textColor">@color/primaryText</item>
+
+        <item name="android:textColor">@color/alertText</item>
         <item name="android:padding">@dimen/list_item_padding</item>
         <item name="android:textSize">30sp</item>
     </style>
 
     <!-- publication date -->
     <style name="publicationDate">
+
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/primaryText</item>
         <item name="android:padding">@dimen/text_padding</item>
@@ -24,6 +26,7 @@
 
     <!-- section name -->
     <style name="sectionName">
+
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorAccent</item>
@@ -31,7 +34,8 @@
     </style>
 
     <!-- article title -->
-    <style name="webTitle">
+    <style name="textTitle">
+
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/primaryText</item>
@@ -40,6 +44,7 @@
 
     <!-- article trail text -->
     <style name="trailText">
+
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/primaryText</item>
         <item name="android:padding">@dimen/text_padding</item>
