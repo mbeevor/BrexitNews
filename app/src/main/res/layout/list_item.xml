@@ -8,7 +8,7 @@
     android:padding="@dimen/list_item_padding">
 
     <TextView
-        android:id="@+id/textview_publication_date"
+        android:id="@+id/text_view_publication_date"
         style="@style/publicationDate"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -17,7 +17,7 @@
         tools:text="Date" />
 
     <TextView
-        android:id="@+id/textview_section_name"
+        android:id="@+id/text_view_section_name"
         style="@style/sectionName"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -26,7 +26,7 @@
         tools:text="Section Name" />
 
     <TextView
-        android:id="@+id/textview_title"
+        android:id="@+id/text_view_title"
         style="@style/textTitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -35,7 +35,7 @@
         tools:text="Article Title" />
 
     <TextView
-        android:id="@+id/textview_trail_text"
+        android:id="@+id/text_view_trail_text"
         style="@style/trailText"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -35,7 +35,7 @@ public class NewsAdapter extends ArrayAdapter<Article> {
         Article article = getItem(position);
 
         // get date and assign to ID
-        TextView webPublicationDate = listItemView.findViewById(R.id.textview_publication_date);
+        TextView webPublicationDate = listItemView.findViewById(R.id.text_view_publication_date);
         webPublicationDate.setText(getFormartedDate(article.getWebPublicationDate()));
 
         // get web title and assign to ID
@@ -43,11 +43,11 @@ public class NewsAdapter extends ArrayAdapter<Article> {
         webTitle.setText(article.getWebTitle());
 
         // get section name and assign to ID
-        TextView sectionName = listItemView.findViewById(R.id.textview_section_name);
+        TextView sectionName = listItemView.findViewById(R.id.text_view_section_name);
         sectionName.setText(article.getSectionName());
 
         // get trailText and assign to ID
-        TextView trailText = listItemView.findViewById(R.id.textview_trail_text);
+        TextView trailText = listItemView.findViewById(R.id.text_view_trail_text);
         trailText.setText(article.getTrailText());
 
         return listItemView;
